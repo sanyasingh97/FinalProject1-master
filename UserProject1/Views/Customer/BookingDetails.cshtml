@@ -1,0 +1,77 @@
+﻿@model UserProject1.Models.Bookings
+
+@{
+    ViewData["Title"] = "BookingHistory";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/dashboardBootstrap.css" />
+    <link rel="stylesheet" href="~/css/Dashboard.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Welcome </div>
+            <div class="list-group list-group-flush">
+                <a asp-action="ViewProfile" asp-controller="Customer" class="list-group-item list-group-item-action bg-light" width="40%">View Profile</a>
+                <a asp-action="BookingDetails" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Booking Details</a>
+                <a asp-action="ChangePassword" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Change Password</a>
+                <a asp-action="Feedback" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Feedback</a>
+
+                <a asp-action="Logout" asp-controller="Ticket" class="list-group-item list-group-item-action bg-light">Logout</a>
+            </div>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-6">
+            <table class=" table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Booking Amount</th>
+                        <th>Booking Date</th>
+                        <th>Audi Name</th>
+                        <th>Show Timing</th>
+                    </tr>
+                    @foreach (var item in ViewBag.c)
+                    {
+                        <tr>
+                            <td>@item.BookingAmount</td>
+                            <td>@item.BookingDate</td>
+                            <td>@item.AudiName</td>
+                            <td>@item.ShowTiming</td>
+
+                        </tr>
+                    }
+
+                </thead>
+            </table>
+        </div>
+    </div>
+    <right> <a asp-controller="Customer" asp-action="Dashboard" class="btn btn-secondary  btn-lg btn-block ">Done</a></right>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

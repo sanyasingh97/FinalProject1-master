@@ -1,0 +1,63 @@
+﻿@model UserProject1.Models.UserDetails
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<style type="text/css">
+    body {
+        background-image: url(https://img.freepik.com/free-vector/dark-wall-background_1390-191.jpg?size=338&ext=jpg);
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/css1/style.css" />
+</head>
+
+<body background="../images/intro-bg.jpg">
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <br />
+                <br />
+                <br />
+
+                <img style="padding-left:15px;" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" alt="">
+            </div>
+            <form id="loginform" class="form-horizontal" asp-action="Index" asp-controller="Customer" method="post" role="form">
+                <h3 style="color:black">Sign In</h3>
+
+                <div class="form-group">
+                    <label for="UserName" class="text-uppercase"></label>
+                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Password" class="text-uppercase"></label>
+                    <input id="login-password" type="text" class="form-control" name="password" value="" placeholder="password">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-login">
+                    <button type="submit" style="color:white; background-color:black;">Sign In</button>
+                    <p>
+                        Dont have an account?
+                        &nbsp;
+                        <a asp-controller="BookMovie" asp-action="Register" style="color:black;">Sign Up</a>
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,0 +1,86 @@
+﻿
+@model UserProject1.Models.UserDetails
+
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/dashboardBootstrap.css" />
+    <link rel="stylesheet" href="~/css/Dashboard.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Welcome </div>
+            <div class="list-group list-group-flush">
+                <a asp-action="ViewProfile" asp-controller="Customer" class="list-group-item list-group-item-action bg-light" width="40%">View Profile</a>
+                <a asp-action="BookingHistory" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Booking Details</a>
+                <a asp-action="ChangePassword" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Change Password</a>
+                <a asp-action="Feedback" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Feedback</a>
+
+                <a asp-action="Logout" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Logout</a>
+            </div>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-4 col-md-4">
+
+
+            <br />
+            <br />
+            <div class="card mb-4 shadow-sm">
+                <div class="card" align="center" style="width: 500px;float:right">
+
+                    <div class="card-body">
+
+                        <form asp-action="EditProfile" asp-controller="Customer" method="post">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    <b>Email:</b> <label class="control-label"></label>
+                                    <input asp-for="Email" class="form-control" />
+                                </li>
+
+                                <li class="list-group-item">
+                                    <b>User Name:</b> <label class="control-label"></label>
+                                    <input asp-for="UserName" class="form-control" />
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Contact Number:</b> <label class="control-label"></label>
+                                    <input asp-for="ContactNo" class="form-control" />
+                                </li>
+                                <li class="list-group-item">
+                                    <p> <center><a asp-controller="Customer" asp-action="ViewProfile" class="btn btn-secondary btn-lg btn-block ">Done</a></center></p>
+                                    <right> <a asp-controller="Customer" asp-action="Dashboard" class="btn btn-success  btn-lg btn-block ">Back</a></right>
+
+                                </li>
+
+                            </ul>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });</script>
+</body>
+</html>
+

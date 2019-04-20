@@ -1,0 +1,72 @@
+﻿@model UserProject1.Models.UserDetails
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<style type="text/css">
+    body {
+        background-image: url(https://images.pexels.com/photos/176851/pexels-photo-176851.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/css1/style.css">
+</head>
+
+<body background="../images/intro-bg.jpg">
+
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder">
+                <br />
+                <br />
+                <br />
+
+                <img style="padding-left:15px;" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" alt="">
+            </div>
+            <form id="loginform" class="form-horizontal" role="form" method="post" asp-controller="BookMovie" asp-action="DirectRegister">
+                <h3 style="color:black">Sign Up</h3>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ContactNo" class="control-label"></label>
+                    <input asp-for="ContactNo" class="form-control" />
+                    <span asp-validation-for="ContactNo" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a asp-controller="Location" asp-action="Index" class="btn btn-danger"><b>Back To list</b></a>
+
+            </form>
+            @{
+                TempData.Keep("uid");
+            }
+        </div>
+    </div>
+    </div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

@@ -1,0 +1,34 @@
+﻿@model UserProject.Models.Location
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2><b>EDIT</b></h2>
+<br />
+<form asp-action="Edit" asp-controller="Location">
+    <div class="form-group">
+        <label asp-for="LocationName"><b>Location Name</b></label>
+        <input type="text" class="form-control" asp-for="LocationName" placeholder="Enter Location Name">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="LocationImage"><b>Location Image</b></label>
+        <input type="text" class="form-control" asp-for="LocationImage" placeholder="Enter Location Image">
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a asp-controller="Location" asp-action="Index" class="btn btn-light"><b>Back To List</b></a>
+</form>
+
+@*@using (Html.BeginForm("Edit", "Multiplex", FormMethod.Post))
+    {
+
+        @Html.LabelFor(model => model.MultiplexName)
+        @Html.EditorFor(model => model.MultiplexName)
+        <br />
+
+
+        <br />*@
+

@@ -1,0 +1,65 @@
+﻿
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dashboard</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/Dashboard.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading"> </div>
+            <div class="list-group list-group-flush">
+
+                <a asp-action="ViewProfile" asp-controller="Customer" class="list-group-item list-group-item-action bg-light" width="40%">View Profile</a>
+                <a asp-action="BookingDetails" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Booking Details</a>
+                <a asp-action="ChangePassword" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Change Password</a>
+                <a asp-action="Feedback" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Feedback</a>
+                <a asp-action="Logout" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Logout</a>
+
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+       
+            <div class="container-fluid">
+                <center>
+                    <h1 class="mt-4">Dashboard!</h1></center>
+                <br />
+                <br />
+               
+                    <center> <h3>Welcome User!</h3></center>
+
+            </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>

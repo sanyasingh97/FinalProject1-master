@@ -1,0 +1,113 @@
+﻿
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 main">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-responsive" alt="Invoce Template" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" />
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <p><b>Username:</b> @ViewBag.user.UserName</p>
+                        <p><b>Email:</b> @ViewBag.user.Email</p>
+                        <p><b>Contact Number:</b> @ViewBag.user.ContactNo</p>
+                        <p><b>Booking Date:</b> @ViewBag.book.BookingDate</p>
+                        <p><b>Audi:</b> @ViewBag.book.AudiName</p>
+                        <p><b>Show Timing:</b> @ViewBag.book.ShowTiming</p>
+                        @*<p><b>Multiplex:</b> @ViewBag.Index</p>*@
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-6">
+
+
+                    </div>
+                    <div class="col-xs-6 text-right">
+
+                     
+
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><h5>Movie Name</h5></th>
+                                <th><h5>Movie Price</h5></th>
+                                <th><h5>Seats</h5></th>
+                                <th><h5>Amount</h5></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach (var item in ViewBag.bookmovie)
+                            {
+                                <tr>
+
+                                    <td class="text-left"><b>@item.Movies.MovieName</b></td>
+
+                                    <td class="text-left"><b>@(item.Movies.MoviePrice * item.Quantity)</b></td>
+                                    <td class="text-left"><b>@(item.Quantity)</b></td>
+
+                                    <td class="text-left"><b>@ViewBag.total</b></td>
+
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><b>Subtotal</b></td>
+                                    <td class="text-right"><b>@ViewBag.total</b></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Discount</td>
+                                    <td class="text-right">100</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">Total</td>
+                                    <td class="text-right">@ViewBag.subtotal</td>
+                                </tr>
+
+
+                            }
+                            @*<tr class="text-right" style="color: #F81D2D;">
+                                <td class="text-right"><h4><strong> Sub Total:</strong></h4></td>
+                                <td class="text-left"><h4><strong><i class="fa fa-usd" aria-hidden="true"></i> @(ViewBag.subtotal)</strong></h4></td>
+                            </tr>*@
+
+                        </tbody>
+
+                    </table>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-success">Home</a>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .main {
+        background: #ffffff;
+        border-bottom: 15px solid #F81D2D;
+        border-top: 15px solid #1E1F23;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 40px 30px !important;
+        position: relative;
+        box-shadow: 0 1px 21px #808080;
+        font-size: 10px;
+    }
+
+        .main thead {
+            background: #1E1F23;
+            color: #fff;
+        }
+</style>

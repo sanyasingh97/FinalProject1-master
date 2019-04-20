@@ -1,0 +1,125 @@
+﻿@model UserProject1.Models.Movies
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+@*<div class="card mb-2" style="max-width: 40%;">
+
+        <img src="@Html.DisplayFor(m=>m.MovieImage)" class="card-img">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <p class="card-text"><b> MOVIE NAME: </b> @Html.DisplayFor(m => m.MovieName)</p>
+            <p class="card-text"><b> MOVIE DURATION: </b>  @Html.DisplayFor(m => m.MovieDuration)</p>
+            <p class="card-text"><b> MOVIE PRICE: </b> @Html.DisplayFor(m => m.MoviePrice)</p>
+            <p class="card-text"> @Html.DisplayFor(m => m.MovieDescription)</p>
+
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back To List</a>
+            &nbsp;
+            <a asp-controller="BookMovie" asp-action="Book" class="btn btn-info">Book Movie</a>
+            <a asp-controller="BookMovie" asp-action="Review" class="btn btn-success">Comment</a>
+
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>TheEvent - Bootstrap Event Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/venobox/venobox.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Theme Name: TheEvent
+      Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+<body>
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2>Movie Details</h2>
+
+            </div>
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Html.DisplayFor(m=>m.MovieImage)" alt="Speaker 1" class="img-fluid">
+                </div>
+
+                <div class="col-md-6">
+                    &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                    <div class="details">
+                        &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                        <h1>@Html.DisplayFor(m => m.MovieName)</h1>
+                    
+
+                        <h2>@Html.DisplayFor(m => m.MovieDuration)</h2></p>
+
+                        <h2> @Html.DisplayFor(m => m.MoviePrice)</h2>
+
+                        <p>@Html.DisplayFor(m => m.MovieDescription)</p>
+                        &nbsp; &nbsp; &nbsp;<br /><br />
+                        <a asp-controller="Customer" asp-action="Movies" class="btn btn-primary">Back To List</a>
+
+                        <a asp-controller="BookMovie" asp-action="Book" class="btn btn-info">Book Movie</a>
+                        <a asp-controller="BookMovie" asp-action="Review" class="btn btn-success">Write Review</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    </main>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

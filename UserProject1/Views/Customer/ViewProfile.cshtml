@@ -1,0 +1,87 @@
+﻿
+@model UserProject1.Models.UserDetails
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "ViewProfile";
+    Layout = null;
+    <link rel="stylesheet" href="~/css/sunder.css" />
+}
+<style type="text/css">
+    body {
+        background-image: url(http://images6.fanpop.com/image/photos/40100000/faded-trignity-40194185-2560-1084.jpg);
+    }
+</style>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/dashboardBootstrap.css" />
+    <link rel="stylesheet" href="~/css/Dashboard.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading"><b>Welcome @Context.Session.GetString("uname")!! </b></div>
+            <div class="list-group list-group-flush">
+                <a asp-action="ViewProfile" asp-controller="Customer" class="list-group-item list-group-item-action bg-light" width="40%">View Profile</a>
+                <a asp-action="BookingDetails" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Booking Details</a>
+                <a asp-action="ChangePassword" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Change Password</a>
+                <a asp-action="Feedback" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Feedback</a>
+
+                <a asp-action="Logout" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Logout</a>
+            </div>
+        </div>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-md-4 col-md-4">
+            <br />
+            <br />
+            <div class="card mb-4 shadow-sm">
+
+                <div class="card" align="center" style="width: 500px;float:right">
+
+
+
+                    <li class="list-group-item">
+                        <h5 class="card-title">   Email :   @Html.DisplayFor(model => model.Email)</h5>
+                    </li>
+
+                    <li class="list-group-item">
+                        <h5 class="card-title">User Name :   @Html.DisplayFor(model => model.UserName)</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5 class="card-title">Contact :   @Html.DisplayFor(model => model.ContactNo)</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <p> <center><a asp-controller="Customer" asp-action="Dashboard" class="btn btn-secondary btn-lg btn-block ">Done</a></center></p>
+                        <right> <a asp-controller="Customer" asp-action="EditProfile" class="btn btn-success  btn-lg btn-block ">Edit Profile</a></right>
+
+                    </li>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });</script>
+</body>
+</html>
