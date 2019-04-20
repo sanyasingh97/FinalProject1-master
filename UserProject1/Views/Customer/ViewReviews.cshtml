@@ -1,0 +1,25 @@
+﻿@model UserProject1.Models.Reviews
+@{
+    ViewData["Title"] = "ViewReviews";
+}
+
+<h2>ViewReviews</h2>
+<div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile">
+    <div class="bootstrap-tab-text-grids">
+        @foreach(var item in ViewBag.reviews)
+        {
+            <div class="bootstrap-tab-text-grid">
+                <div class="bootstrap-tab-text-grid-left">
+
+                </div>
+                <div class="bootstrap-tab-text-grid-left">
+                    <ul>
+                        <li><a href="#">@item.Comment</a></li>
+       
+                    </ul>
+                </div>
+            </div>
+        }
+    <div class=""clearfix"></div>
+</div>
+</div>

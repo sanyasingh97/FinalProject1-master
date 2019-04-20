@@ -177,7 +177,10 @@ namespace UserProject1.Controllers
             return RedirectToAction("Dashboard", "Customer");
         }
 
-
+        public IActionResult ViewReviews()
+        {
+            return View();
+        }
     }
 }
 

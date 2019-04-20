@@ -5,7 +5,11 @@
     Layout = null;
 }
 
-
+<style type="text/css">
+    body {
+        background-image: url(https://images.wallpaperscraft.com/image/glare_circles_shadow_background_faded_47617_1920x1200.jpg);
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +36,9 @@
                 <a asp-action="ViewProfile" asp-controller="Customer" class="list-group-item list-group-item-action bg-light" width="40%">View Profile</a>
                 <a asp-action="BookingDetails" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Booking Details</a>
                 <a asp-action="ChangePassword" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Change Password</a>
-                <a asp-action="Feedback" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Feedback</a>
+                <a asp-action="ViewReviews" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Reviews</a>
 
-                <a asp-action="Logout" asp-controller="Ticket" class="list-group-item list-group-item-action bg-light">Logout</a>
+                <a asp-action="Logout" asp-controller="Customer" class="list-group-item list-group-item-action bg-light">Logout</a>
             </div>
         </div>
 
