@@ -67,10 +67,10 @@ namespace UserProject1.Controllers
             if (bookmovie == null)
             {
                 HttpContext.Session.Remove("bookmovie");
-                return View("GoBack");
+                return RedirectToAction("Index");
             }
-
-            return RedirectToAction("Index");
+            return View("GoBack");
+        
         }
         [Route("goback")]
         public IActionResult GoBack()
