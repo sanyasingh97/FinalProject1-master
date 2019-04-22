@@ -129,7 +129,36 @@ namespace XUserSideTestingProject
 
         }
 
+        [Fact]
+        [Trait("BookMovie", "Index1")]
+        public void Contact()
+        {
+            //Act
+            IActionResult result = controller.Index1();
+            //Assert
+            Assert.NotNull(result);
 
+        }
+        [Fact]
+        [Trait("BookMovie", "Review")]
+        public void Review()
+        {
+            //Act
+            IActionResult result = controller.Review();
+            //Assert
+            Assert.NotNull(result);
+
+        }
+        [Fact]
+        [Trait("BookMovie", "Error")]
+        public void Error()
+        {
+            //Act
+            IActionResult result = controller.Error();
+            //Assert
+            Assert.NotNull(result);
+
+        }
     }
 }
 

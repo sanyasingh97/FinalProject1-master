@@ -38,19 +38,19 @@ namespace XUserSideTestingProject
 
 
         }
-        [Fact]
-        public void Task_Customer_Return_OkResult()
-        {
-            Assert.Throws<NullReferenceException>(() =>
-            {
-                var controller = new CustomerController();
+        //[Fact]
+        //public void Task_Customer_Return_OkResult()
+        //{
+        //    Assert.Throws<NullReferenceException>(() =>
+        //    {
+        //        var controller = new CustomerController();
 
-                var UserName = "bgunwani";
-                var Password = "1";
-                var data = controller.DirectLogin(UserName, Password);
-                Assert.IsType<RedirectToActionResult>(data);
-            });
-        }
+        //        var UserName = "bgunwani";
+        //        var Password = "1";
+        //        var data = controller.DirectLogin(UserName, Password);
+        //        Assert.IsType<RedirectToActionResult>(data);
+        //    });
+        //}
         [Fact]
         public void Task_Customer_Index_OkResult()
         {
@@ -91,20 +91,7 @@ namespace XUserSideTestingProject
 
 
         }
-        //[Fact]
-        //[Trait("Customer", "BookingDetails")]
-        //public void BookingDetails()
-        //{
-        //    Assert.Throws<NullReferenceException>(() =>
-        //    {
 
-        //        //Act
-        //        IActionResult result = controller.BookingDetails();
-        //        //Assert
-        //        Assert.NotNull(result);
-        //    });
-
-        //}
         [Fact]
         [Trait("Customer", "ChangePassword")]
         public void ChangePassword()
@@ -121,9 +108,43 @@ namespace XUserSideTestingProject
 
 
         }
+        
+        [Fact]
+        [Trait("Customer", "ViewReviews")]
+        public void ViewReviews()
+        {
+            //Act
+            IActionResult result = controller.ViewReviews();
+            //Assert
+            Assert.NotNull(result);
+
+        }
+        [Fact]
+        [Trait("Customer", "EditProfile")]
+        public void Task_BookMovie_EditResult_OkResult()
+        {
+            Assert.Throws<NullReferenceException>(() =>
+            {
+                var controller = new CustomerController();
+
+
+                var data = controller.EditProfile();
+                Assert.IsType<RedirectToActionResult>(data);
+            });
+        }
 
 
 
+             [Fact]
+        [Trait("Customer", "Dashboard")]
+        public void Dashboard()
+        {
+            //Act
+            IActionResult result = controller.Dashboard();
+            //Assert
+            Assert.NotNull(result);
 
+        }
     }
+    
 }

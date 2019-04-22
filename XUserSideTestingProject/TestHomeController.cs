@@ -76,6 +76,17 @@ namespace XUserSideTestingProject
             Assert.NotNull(result);
 
         }
+        [Fact]
+        [Trait("Home", "Index")]
+        public void Index()
+        {
+            //Act
+            IActionResult result = controller.Index();
+            //Assert
+            Assert.NotNull(result);
+
+        }
+       
 
     }
 }

@@ -33,7 +33,9 @@ namespace UserProject1.Controllers
         {
             return View();
         }
-        public IActionResult Index1()
+
+        [Route("Location")]
+        public IActionResult Location()
         {
             var location = context.Locations.ToList();
             return View(location);

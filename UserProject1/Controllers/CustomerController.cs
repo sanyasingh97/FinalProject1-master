@@ -47,46 +47,30 @@ namespace UserProject1.Controllers
         [HttpPost]
         public IActionResult DirectLogin(UserDetails userDetail)
         {
-            if(userDetail.UserName != null && userDetail.Password != null)
+            if (userDetail.UserName != null && userDetail.Password != null)
             {
                 var user = context.UserDetails.Where(x => x.UserName == userDetail.UserName && x.Password == userDetail.Password).SingleOrDefault();
                 HttpContext.Session.SetString("uid", (user.UserDetailId).ToString());
                 HttpContext.Session.SetString("uname", (user.UserName).ToString());
-                return RedirectToAction("Index1", "Home");
+                return RedirectToAction("Location", "Home");
             }
             return View();
-                
-        }
 
+        }
         [Route("Index")]
 
         [HttpPost]
-        public ActionResult Index([Bind("UserName","Password")]string username, string password)
+        public ActionResult Index(UserDetails userDetail)
         {
-            if(username == null && password == null)
+            if (userDetail.UserName != null && userDetail.Password != null)
             {
-                ViewBag.Error = "Enter Your Credentials";
-                return RedirectToAction("Index", "Customer");
+                var user = context.UserDetails.Where(x => x.UserName == userDetail.UserName && x.Password == userDetail.Password).SingleOrDefault();
+                HttpContext.Session.SetString("uid", (user.UserDetailId).ToString());
+                HttpContext.Session.SetString("uname", (user.UserName).ToString());
+                return RedirectToAction("Checkout", "BookMovie");
             }
-            else
-            {
-                var user = context.UserDetails.Where(x => x.UserName == username && x.Password == password).SingleOrDefault();
-                if (user == null)
-                {
-                    ViewBag.Error = "Invalid Credentials";
-                    return RedirectToAction("Index", "Customer");
-                }
-                else
-                {
-                    HttpContext.Session.SetString("uid", (user.UserDetailId).ToString());
-                    HttpContext.Session.SetString("uname", (user.UserName).ToString());
-                    return RedirectToAction("Checkout", "BookMovie");
-                }
-                
-            }
-            
+            return View();
         }
-        
         [Route("movies")]
         public IActionResult Movies(int id)
 
@@ -101,7 +85,7 @@ namespace UserProject1.Controllers
         {
             HttpContext.Session.Remove("uid");
             HttpContext.Session.Remove("uname");
-            return RedirectToAction("Index1", "Home");
+            return RedirectToAction("Index", "Home");
         }
 
         [Route("ChangePassword")]

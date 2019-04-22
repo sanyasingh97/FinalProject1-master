@@ -31,9 +31,9 @@
                 <img style="padding-left:15px;" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" alt="">
             </div>
             <form style="font-size:16px;" asp-action="DirectLogin" asp-controller="Customer" method="post" style="padding-bottom:15px;">
-                <div asp-validation-summary="ModelOnly" class="text-danger" style="color:red; font-weight: bold;"></div>
+                @*<div asp-validation-summary="ModelOnly" class="text-danger" style="color:red; font-weight: bold;"></div>*@
                 <h3 style="color:black">Sign In</h3>
-
+                <p>@ViewBag.Error</p>
                 <div class="form-group">
                     <label for="UserName" class="text-uppercase"></label>
                     <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
