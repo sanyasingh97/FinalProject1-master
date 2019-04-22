@@ -329,6 +329,7 @@ namespace UserProject1.Controllers
                 context.UserDetails.Add(userDetails);
                 context.SaveChanges();
                 HttpContext.Session.SetString("uid", (userDetails.UserDetailId).ToString());
+                HttpContext.Session.SetString("uname", (userDetails.UserName).ToString());
                 return RedirectToAction("Checkout", "BookMovie");
             }
             return View();
@@ -348,6 +349,7 @@ namespace UserProject1.Controllers
                 context.UserDetails.Add(userDetails);
                 context.SaveChanges();
                 HttpContext.Session.SetString("uid", (userDetails.UserDetailId).ToString());
+                HttpContext.Session.SetString("uname", (userDetails.UserName).ToString());
                 return RedirectToAction("Index1", "Home");
             }
             return View();

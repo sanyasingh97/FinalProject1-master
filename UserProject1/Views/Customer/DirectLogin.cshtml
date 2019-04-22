@@ -30,28 +30,26 @@
 
                 <img style="padding-left:15px;" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" alt="">
             </div>
-            <form asp-action="DirectLogin" asp-controller="Customer" method="post" style="padding-bottom:15px;">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form style="font-size:16px;" asp-action="DirectLogin" asp-controller="Customer" method="post" style="padding-bottom:15px;">
+                <div asp-validation-summary="ModelOnly" class="text-danger" style="color:red; font-weight: bold;"></div>
                 <h3 style="color:black">Sign In</h3>
 
                 <div class="form-group">
                     <label for="UserName" class="text-uppercase"></label>
                     <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <span asp-validation-for="UserName" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
                 <div class="form-group">
                     <label for="Password" class="text-uppercase"></label>
-                    <input id="login-password" type="text" class="form-control" name="password" value="" placeholder="password">
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <input id="login-password" type="password" class="form-control" name="password" value="" placeholder="password">
+                    <span asp-validation-for="Password" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
 
-                <div class="form-login">
-                    <button type="submit" style="color:white; background-color:black;">Sign In</button>
-                    <p>
-                        Dont have an account?
-                        &nbsp;
-                        <a asp-controller="BookMovie" asp-action="DirectRegister" style="color:black;">Sign Up</a>
-                    </p>
+                <div class="form-group">
+                    <br/>
+                    <button class="form-control" type="submit" style="color:white; background-color:black;">Sign In</button>
+                    Dont have an account?
+                    <a asp-controller="BookMovie" asp-action="DirectRegister" style="color:black;">Sign Up</a>
                 </div>
 
             </form>

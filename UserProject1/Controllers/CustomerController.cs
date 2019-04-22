@@ -45,17 +45,17 @@ namespace UserProject1.Controllers
         }
         [Route("DirectLogin")]
         [HttpPost]
-        public IActionResult DirectLogin([Bind("UserName", "Password")]string username, string password)
+        public IActionResult DirectLogin(UserDetails userDetail)
         {
-            if (ModelState.IsValid)
+            if(userDetail.UserName != null && userDetail.Password != null)
             {
-                var user = context.UserDetails.Where(x => x.UserName == username && x.Password == password).SingleOrDefault();
+                var user = context.UserDetails.Where(x => x.UserName == userDetail.UserName && x.Password == userDetail.Password).SingleOrDefault();
                 HttpContext.Session.SetString("uid", (user.UserDetailId).ToString());
                 HttpContext.Session.SetString("uname", (user.UserName).ToString());
                 return RedirectToAction("Index1", "Home");
-
             }
             return View();
+                
         }
 
         [Route("Index")]
@@ -146,8 +146,8 @@ namespace UserProject1.Controllers
             return View(c);
         }
 
-        [Route("BookingDetails")]
-        public IActionResult BookingDetails()
+        [Route("BookingHistory")]
+        public IActionResult BookingHistory()
         {
             int id = int.Parse(HttpContext.Session.GetString("uid"));
             var c = context.Bookings.Where(x => x.UserDetailId == id).ToList();

@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<UserProject1.Models.Multiplexes>
-
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
@@ -9,7 +8,7 @@
             background-image: url(https://img.freepik.com/free-photo/white-plain-wall-surface-background_53876-74688.jpg?size=626&ext=jpg);
         }
     </style>*@
-<div class="album py-5 bg-light">
+@*<div class="album py-5 bg-light">
     <div class="container">
         <div class="row">
             @foreach (var item in ViewBag.Index)
@@ -18,26 +17,66 @@
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <img src="@item.MultiplexImage" class="bd-placeholder-img" width="100%" height="300" card-img-top" />
-
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <p class="card-text" style="font-weight:bold;">@item.MultiplexName</p>
                                 &nbsp;
                                 <p class="card-text" style="font-weight:bold;">@item.MultiplexDescription</p>
-
                                 &nbsp;
                                 &nbsp;
 
                                 <a asp-controller="Customer" asp-action="Movies" asp-route-id="@item.MultiplexId" type="button" class="btn btn-secondary">Select Multiplex</a>
                                 &nbsp;
                             </div>
-
                         </div>
                     </div>
                 </div>
 
             }
-
         </div>
     </div>
-</div>
+</div>*@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+<!-- Bootstrap CSS File -->
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/venobox/venobox.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="css/style.css" rel="stylesheet">
+
+<section id="speakers" class="wow fadeInUp">
+
+
+    <div class="row">
+        @foreach (var item in ViewBag.Index)
+        {
+            <div class="col-lg-4 col-md-6">
+                <div class="speaker">
+                    <img src=@item.MultiplexImage class="bd-placeholder-img" width="100%" height="300" card-img-top"/>
+                  >
+                    <div class="details">
+                        <h3><a asp-controller="Customer" asp-action="Movies" asp-route-id="@item.MultiplexId">@item.MultiplexDescription</a></h3>
+                        <p>@item.MultiplexName</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+

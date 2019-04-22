@@ -4,41 +4,81 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+@*<div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
 
-<style type="text/css">
-    body {
-        background-image: url(https://www.publicdomainpictures.net/pictures/30000/velka/film-background-1334067869u9d.jpg);
-    }
-</style>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="@item.MovieImage" class="bd-placeholder-img" width="100%" height="300" card-img-top" />
 
-<div class="album py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            @foreach (var item in Model)
-            {
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="card-text" style="font-weight:bold;">@item.MovieName</p>
+                                    &nbsp;
+                                    &nbsp;
 
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="@item.MovieImage" class="bd-placeholder-img" width="100%" height="300" card-img-top" />
+                                    <a asp-controller="BookMovie" asp-action="Book" asp-route-id="@item.MovieId" class="btn btn-secondary">Book Movie</a>
+                                    &nbsp;          &nbsp;
+                                    <a asp-controller="BookMovie" asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-secondary">View Details</a>
 
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="card-text" style="font-weight:bold;">@item.MovieName</p>
-                                &nbsp;
-                                &nbsp;
-
-                                <a asp-controller="BookMovie" asp-action="Book" asp-route-id="@item.MovieId" class="btn btn-secondary">Book Movie</a>
-                                &nbsp;          &nbsp;
-                                <a asp-controller="BookMovie" asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-secondary">View Details</a>
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
 
-            }
+                }
 
+            </div>
         </div>
+    </div>*@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+<!-- Bootstrap CSS File -->
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/venobox/venobox.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="css/style.css" rel="stylesheet">
+
+<section id="speakers" class="wow fadeInUp">
+
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6">
+                <div class="speaker">
+                    <img src=@item.MovieImage class="bd-placeholder-img" width="100%" height="300" card-img-top" />
+                    >
+                    <div class="details">
+                        <h3><a asp-controller="BookMovie" asp-action="Book" asp-route-id="@item.MovieId">@item.MovieName</a></h3>
+                        <a asp-controller="BookMovie" asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-</div>
+</section>
+
+

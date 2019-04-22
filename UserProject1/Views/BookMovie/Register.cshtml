@@ -56,9 +56,14 @@
                     <input asp-for="ContactNo" class="form-control" />
                     <span asp-validation-for="ContactNo" class="text-danger"></span>
                 </div>
+                <div class="form-login">
+                    <button type="submit" style="color:white; background-color:black;">Sign Up</button>
+                    <p>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a asp-controller="Location" asp-action="Index" class="btn btn-danger"><b>Back To list</b></a>
+                        &nbsp;
+                        <a asp-controller="Customer" asp-action="Index" style="color:black;">Back To Login</a>
+                    </p>
+                </div>
 
             </form>
             @{

@@ -64,7 +64,8 @@
                     }
                     else
                     {
-                        <li><a asp-action="ViewProfile" asp-controller="Customer">Dashboard</a></li>
+                        <li><a asp-action="ViewProfile" asp-controller="Customer"> Welcome @Context.Session.GetString("uname")!!</a></li>
+                        @*<li class="buy-tickets"><a asp-action="ViewProfile" asp-controller="Customer"> Welcome @Context.Session.GetString("uname") </a></li>*@
                         <li class="buy-tickets"><a asp-action="Logout" asp-controller="Customer">Logout</a></li>
                     }
 

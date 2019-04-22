@@ -31,33 +31,38 @@
 
                 <img style="padding-left:15px;" src="https://tccl.libnet.info/images/events/tccl/Movie_night.jpg" alt="">
             </div>
-            <form id="loginform" class="form-horizontal" role="form" method="post" asp-controller="BookMovie" asp-action="DirectRegister">
+            <form style="font-size:16px;" id="loginform" class="form-horizontal" role="form" method="post" asp-controller="BookMovie" asp-action="DirectRegister">
                 <h3 style="color:black">Sign Up</h3>
 
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
                     <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <span asp-validation-for="Email" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="UserName" class="control-label"></label>
                     <input asp-for="UserName" class="form-control" />
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <span asp-validation-for="UserName" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Password" class="control-label"></label>
                     <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <span asp-validation-for="Password" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ContactNo" class="control-label"></label>
                     <input asp-for="ContactNo" class="form-control" />
-                    <span asp-validation-for="ContactNo" class="text-danger"></span>
+                    <span asp-validation-for="ContactNo" class="text-danger" style="color:red; font-weight: bold;"></span>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a asp-controller="Location" asp-action="Index" class="btn btn-danger"><b>Back To list</b></a>
+                <div class="form-group">
+                    <br />
+                    <button type="submit" style="color:white; background-color:black;">Sign Up</button>
+                    <br/>
+                    <a asp-controller="Customer" asp-action="DirectLogin" style="color:black;">Back To Login</a>
+                </div>
 
+                    
             </form>
             @{
                 TempData.Keep("uid");
